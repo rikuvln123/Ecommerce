@@ -3,27 +3,25 @@ package com.rk.create;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import javax.naming.InitialContext;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.sql.DataSource;
 
-/**
- * Servlet implementation class CreateServlet
- */
+
+
 @WebServlet("/gourl")
 public class CreateServlet extends HttpServlet {
-	private static final String Details_cost="INSERT INTO CUSTO_DETAIL VALUES(?,?,?)";
+	private static final String Details_cost="INSERT INTO SIGNUP_USER VALUES(?,?,?)";
        
  
-	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) {
 		   Connection con=null;
 		   PreparedStatement ps=null;
 		   PrintWriter pw=null;
@@ -52,10 +50,8 @@ public class CreateServlet extends HttpServlet {
 			    	
 			    }
 		   }catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		    finally {
@@ -81,23 +77,15 @@ public class CreateServlet extends HttpServlet {
 			
 			
 	}
-		   
-	
 
-	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
 		doGet(request, response);
 	}
 	private Connection getPooledconnection() throws Exception {
-		InitialContext ic=null;
-		DataSource ds=null;
+		Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection con=null;
-		ic=new InitialContext();
-		ds=(DataSource)ic.lookup("java:comp/env/myoracle");
-		con=ds.getConnection();
+		con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","rk","sharma");
 		return con;
-		
 	}
 
 }

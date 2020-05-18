@@ -75,6 +75,22 @@ body{
 	color: #fff;
 	text-decoration: none;
 }
+.menu-bar ul li ul{
+	list-style:none;
+	display:none;
+}
+.menu-bar ul li ul li{
+	list-style-type:none;
+	padding:10px;
+}
+
+.menu-bar ul li:hover ul{
+	display:block;
+	position:absolute;
+	text-decoration:none;
+
+	}
+
 .fa-shopping-basket{
 	margin-right: 5px;
 }
@@ -99,6 +115,7 @@ body{
 		height: 57px;
 		width: 100%;
 	}
+	
 }
 
 
@@ -338,3 +355,4 @@ body{
 		padding-right: 20px;
 		font-size: 15px;
 	}
+	

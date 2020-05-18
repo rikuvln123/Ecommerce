@@ -1,0 +1,5 @@
+
+
+signup_user
+
+create table signup_user(name varchar2(50),email varchar2(40), pass varchar2(15));

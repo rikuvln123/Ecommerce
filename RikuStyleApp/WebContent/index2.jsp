@@ -1,7 +1,10 @@
+<%@page import="java.sql.*" %>
+<%@page import="javax.servlet.RequestDispatcher" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login page</title>
+	<title>index2 page</title>
 	<link rel="stylesheet" type="text/css" href="input.css">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -21,9 +24,31 @@
 		</div>
           <div class="menu-bar">
           	<ul>
+          		
+          		<li><i class=" "></i>
+          		<% 
+          		Class.forName("oracle.jdbc.driver.OracleDriver");
+          		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","rk","sharma");
+          		PreparedStatement ps=con.prepareStatement("select name from signup_user where email=? and pass=?");
+                ps.setString(1,request.getParameter("email"));
+				ps.setString(2,request.getParameter("pass"));
+                ResultSet rs=ps.executeQuery();
+				RequestDispatcher rd=request.getRequestDispatcher("error.jsp");
+				if(rs!=null&&rs.next())
+          		out.print("<b style='color:white'>"+rs.getString(1)+"</b>");
+                else
+				rd.forward(request,response);
+                          		
+          		
+          		%>
+          		<ul class="dd">
+          		<li><a href="#">profile</a></li>
+          		<li><a href="#">special offer</a></li>
+          		<li><a href="#">wallet</a></li>
+          		<li><a href="index.html">log out</a></li>
+          		</ul>
+          		</li>
           		<li><a href=""><i class="fa fa-shopping-basket" ></i>Cart</a></li>
-          		<li><a href="">Sign Up</a></li>
-          		<li><a href="">Log in</a></li>
           	</ul>
           </div>
 	</div>
@@ -183,7 +208,7 @@
           		<i class="fa fa-star"></i>
           		<i class="fa fa-star-half-o"></i>2
                     <h3>Boat Headphone</h3>
-                    <h5>₹1000.00</h5>
+                    <h5>â‚¹1000.00</h5>
           	</div>
           </div>
 
@@ -211,7 +236,7 @@
           		<i class="fa fa-star"></i>
           		<i class="fa fa-star-half-o"></i>
                     <h3>Boat Headphone</h3>
-                    <h5>₹1000.00</h5>
+                    <h5>â‚¹1000.00</h5>
           	</div>
           </div>
 
@@ -237,7 +262,7 @@
           		<i class="fa fa-star"></i>
           		<i class="fa fa-star-half-o"></i>
                     <h3>Boat Headphone</h3>
-                    <h5>₹1000.00</h5>
+                    <h5>â‚¹1000.00</h5>
           	</div>
           </div>
 
@@ -265,7 +290,7 @@
           		<i class="fa fa-star"></i>
           		<i class="fa fa-star-half-o"></i>
                     <h3>Boat Headphone</h3>
-                    <h5>₹1000.00</h5>
+                    <h5>â‚¹1000.00</h5>
           	</div>
           </div>
 
@@ -308,7 +333,7 @@
           		<i class="fa fa-star"></i>
           		<i class="fa fa-star-half-o"></i>2
                     <h3>Boat Headphone</h3>
-                    <h5>₹1000.00</h5>
+                    <h5>â‚¹1000.00</h5>
           	</div>
           </div>
 
@@ -336,7 +361,7 @@
           		<i class="fa fa-star"></i>
           		<i class="fa fa-star-half-o"></i>
                     <h3>Boat Headphone</h3>
-                    <h5>₹1000.00</h5>
+                    <h5>â‚¹1000.00</h5>
           	</div>
           </div>
 
@@ -362,7 +387,7 @@
           		<i class="fa fa-star"></i>
           		<i class="fa fa-star-half-o"></i>
                     <h3>Boat Headphone</h3>
-                    <h5>₹1000.00</h5>
+                    <h5>â‚¹1000.00</h5>
           	</div>
           </div>
 
@@ -390,7 +415,7 @@
           		<i class="fa fa-star"></i>
           		<i class="fa fa-star-half-o"></i>
                     <h3>Boat Headphone</h3>
-                    <h5>₹1000.00</h5>
+                    <h5>â‚¹1000.00</h5>
           	</div>
           </div>
 
@@ -417,7 +442,7 @@
           		<i class="fa fa-star"></i>
           		<i class="fa fa-star-half-o"></i>
                     <h3>Boat Headphone</h3>
-                    <h5>₹1000.00</h5>
+                    <h5>â‚¹1000.00</h5>
           	</div>
           </div>
 
@@ -444,7 +469,7 @@
           		<i class="fa fa-star"></i>
           		<i class="fa fa-star-half-o"></i>
                     <h3>Boat Headphone</h3>
-                    <h5>₹1000.00</h5>
+                    <h5>â‚¹1000.00</h5>
           	</div>
           </div>
 
@@ -471,7 +496,7 @@
           		<i class="fa fa-star"></i>
           		<i class="fa fa-star-half-o"></i>
                     <h3>Boat Headphone</h3>
-                    <h5>₹1000.00</h5>
+                    <h5>â‚¹1000.00</h5>
           	</div>
           </div>
 
@@ -497,7 +522,7 @@
           		<i class="fa fa-star"></i>
           		<i class="fa fa-star-half-o"></i>
                     <h3>Boat Headphone</h3>
-                    <h5>₹1000.00</h5>
+                    <h5>â‚¹1000.00</h5>
           	</div>
           </div>
 
