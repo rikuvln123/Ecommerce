@@ -84,7 +84,7 @@ public class CreateServlet extends HttpServlet {
 	private Connection getPooledconnection() throws Exception {
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection con=null;
-		con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","rk","sharma");
+		con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "9668832577");
 		return con;
 	}
 
