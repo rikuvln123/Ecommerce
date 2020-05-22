@@ -29,9 +29,9 @@
 		<div class="menu-bar">
 			<ul>
 
-				<li><i class=" "></i> <% 
+				<li><i class="bi bi-person"></i> <% 
           		Class.forName("oracle.jdbc.driver.OracleDriver");
-          		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","9668832577");
+          		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","rk","sharma");
           		PreparedStatement ps=con.prepareStatement("select name from signup_user where email=? and pass=?");
                 ps.setString(1,request.getParameter("email"));
 				ps.setString(2,request.getParameter("pass"));

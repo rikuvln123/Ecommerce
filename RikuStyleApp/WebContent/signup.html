@@ -3,27 +3,30 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Detail Please</title>
-<link rel="styleSheet" type="text/css" href="crt.css">
+<link rel="styleSheet" type="text/css" href="crt.css"/>
+<script src="validate.js" type="text/javascript"></script>
 </head>
 <body>
+    <span id="msg"></span>
 	<div class="loginbox">
 		<img src="logo.png" class="sweet">
 		<h1>Registration Here</h1>
-		<form action="gourl" method="post">
+		<form  action="gourl" method="post" onsubmit="return validate(this)">
 			<p>Name*</p>
-			<input type="text" name="pname" placeholder="Enter Username">
+			<input type="text" name="pname" >
 
 			<p>Enter Email*</p>
-			<input type="text" name="pmail" placeholder="Enter Email">
+			<input type="text" name="pmail" >
 			<p>Create Password*</p>
-			<input type="password" name="pass" placeholder="Enter Password">
+			<input type="password" name="pass" >
 			<p>Confirm Password*</p>
-			<input type="password" name="cpass" placeholder="confirm Password">
-			<input type="submit" value="Register"> <a href="input.html"
-				id="hm">Home</a></br>
+			<input type="password" name="cpass" >
+			<input type="submit" value="Register"> 
+           <p id="l1">Already a user? <a href="login.html"
+                                 >Login</a></p>
 
 
-		</form>
+		</form>  
 	</div>
 
 </body>

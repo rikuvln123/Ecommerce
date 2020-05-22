@@ -43,12 +43,8 @@ public class CreateServlet extends HttpServlet {
 			  count=ps.executeUpdate();
 			  if(count==0) {
 			    	pw.print("<h1 style='color:red'>record not inserted </h1>");
-			    	 pw.print("<h1><a href='create.html'>Home</a></h1>");
-			    }else {
-			    	RequestDispatcher rd=request.getRequestDispatcher("create1.html");
-			    	rd.forward(request, response);
-			    	
-			    }
+			    	 pw.print("<h1><a href='signup.html'>Home</a></h1>");
+			  }
 		   }catch (SQLException e) {
 				e.printStackTrace();
 			}catch (Exception e) {
@@ -84,7 +80,7 @@ public class CreateServlet extends HttpServlet {
 	private Connection getPooledconnection() throws Exception {
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection con=null;
-		con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "9668832577");
+		con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "rk", "sharma");
 		return con;
 	}
 
