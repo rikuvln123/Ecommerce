@@ -22,6 +22,7 @@ html,body {
 	box-sizing: border-box;
 	padding: 70px 30px;
     opacity: 0.8;
+    border-radius:8px;
 }
 
 .sweet {
